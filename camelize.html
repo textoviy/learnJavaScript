@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>camelize</title>
+</head>
+<body>
+	
+	<script>
+
+var a = camelize("vaga-bongo-ongo");
+console.log(a);
+var b = camelize("-webkit-sorrov-black");
+console.log(b);
+
+		
+		function camelize(str) {
+
+			var strSplitted = str.split("-");
+			console.log(strSplitted);
+
+			for (var i = 1; i < strSplitted.length; i++) {
+				
+					strSplitted[i] = strSplitted[i].charAt(0).toUpperCase() + strSplitted[i].slice(1);
+				
+			}
+
+			return strSplitted.join("");
+		}
+
+		
+	</script>
+</body>
+</html>

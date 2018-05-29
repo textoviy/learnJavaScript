@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Фильтрация массива на месте.html</title>
+</head>
+<body>
+	
+	<script>
+
+		var a = [1, 2, 3, 4, 5, 6, 7, 8 ,9, 10];
+		
+		function filterRangeInPlace(arr, a, b) {
+
+		     for (var i = 0; i < arr.length; i++) {
+
+		     	if (arr[i] < a || arr[i] > b) {
+		     		arr.splice(i--, 1);
+		     	}
+		     }
+
+
+		}
+
+		filterRangeInPlace(a, 4, 8);
+		console.log(a);
+	</script>
+</body>
+</html>

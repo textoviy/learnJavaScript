@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>collection</title>
+</head>
+
+<body>
+    <script>
+    var store = {}; // объект для коллекции
+    var items = ["div", "a", "form"];
+    for (var i = 0; i < items.length; i++) {
+        var key = items[i]; // для каждого элемента создаём свойство
+        console.log(store[key]);
+        store[key] = true; // значение здесь не важно
+        
+    }
+
+    if (store.erg) document.write(1);
+
+    
+    </script>
+</body>
+
+</html>
