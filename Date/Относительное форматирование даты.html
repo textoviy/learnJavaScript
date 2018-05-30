@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Относительное форматирование даты.html</title>
+</head>
+
+<body>
+    <script>
+    function formatDate(date) {
+        var difference = new Date() - date;
+        if (difference < 1000) {
+            return " Только что";
+        }
+
+        var seconds = Math.floor(difference / 1000);
+        if (seconds < 60) {
+            return seconds + " сек. назад";
+        }
+
+        var minutes = Math.floor(difference / 60000);
+        if (minutes < 60) {
+            return minutes + ' мин. назад';
+        }
+
+        var d = date;
+        d = [
+            '0' + d.getDate(),
+            '0' + (d.getMonth() + 1),
+            '' + d.getFullYear(),
+            '0' + d.getHours(),
+            '0' + d.getMinutes()
+        ];
+
+        for (var i = 0; i < d.length; i++) {
+            d[i] = d[i].slice(-2);
+        }
+
+        return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+    }
+
+    document.write(formatDate(new Date(new Date - 1))
+     + "<br>");
+
+    document.write(formatDate(new Date(new Date - 30 * 1000))
+     + "<br>");
+
+    document.write(formatDate(new Date(new Date - 5 * 60 * 1000))
+     + "<br>");
+
+    document.write(formatDate(new Date(new Date - 86400 * 1000))
+     + "<br>"); 
+    </script>
+</body>
+
+</html>

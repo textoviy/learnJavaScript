@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>namedParametersOfFunction.html</title>
+</head>
+
+<body>
+    <script>
+    var opts = {
+        width: 400,
+        height: 200,
+        contents: "Текст"
+    };
+
+    var a = showWarning(opts);
+    console.log(a);
+
+    opts.contents = "Другой текст";
+
+    var b = showWarning(opts);
+    console.log(b);
+
+
+
+    function showWarning(options) {
+        var width = options.width || 200; // по умолчанию
+        var height = options.height || 100;
+
+        var contents = options.contents || "Предупреждение";
+
+        // ...
+    }
+    </script>
+</body>
+
+</html>

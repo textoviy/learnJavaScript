@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>пДМ</title>
+</head>
+
+<body>
+    <script>
+    function getLastDayOfMonth(year, month) {
+        var date = new Date(year, month + 1, 0);
+        return date.getDate();
+    }
+    document.write(getLastDayOfMonth(2018, 2))
+    </script>
+</body>
+
+</html>

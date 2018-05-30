@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сумма всех аргументов функции.html</title>
+</head>
+<body>
+	
+	<script>
+		
+	function sum() {
+		var argSum = 0;
+
+		for(var i = 0; i < arguments.length; i++) {
+		     argSum += arguments[i];
+		}
+
+		return argSum + " | ";
+		}
+
+		document.write(sum(1));
+		document.write(sum(1, 2));
+		document.write(sum(1, 2, 3));
+		document.write(sum(1, 2, 3, 4));
+		document.write(sum(1, 2, 3, 4, 5));
+	</script>
+</body>
+</html>

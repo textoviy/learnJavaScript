@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dayOfTheWeek.html</title>
+</head>
+
+<body>
+    <script>
+    	//getDay() - взять день недели. Чтобы это понять, я потратил 30 минут. Зато понял:) 
+    var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+    function getWeekDay(date) {
+        return days[date.getDay()];
+    }
+
+    var date = new Date(2014, 0, 3);
+
+    document.write(getWeekDay(date));
+   // document.write("<br>" + days[0]);
+    </script>
+</body>
+
+</html>
