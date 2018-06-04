@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сумма через замыкание</title>
+</head>
+<body>
+	
+	<script>
+		
+		function sum(a) {
+
+			return function (b) {
+				return a + b;
+			}
+		}
+
+		document.write( sum(1)(2) + "<br>"); // 3
+		document.write( sum(80)(-45) ); // 35
+	</script>
+</body>
+</html>

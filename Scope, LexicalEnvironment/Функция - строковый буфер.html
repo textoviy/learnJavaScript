@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Функция - строковый буфер</title>
+</head>
+
+<body>
+    <script>
+
+    //Свой код - не прошел тест, но работает так-же. Понял ошибки и переписал по-нормальному
+
+    /*
+
+    function makeBuffer() {
+        var text = arguments[0];
+        var textSum = "";
+
+        return function(text) {
+            if (text == undefined) {
+                return textSum;
+            }
+
+            return textSum = text + "";
+        }
+    };
+
+    var buffer = makeBuffer();
+    document.write(buffer('Замыкания'));
+    document.write(buffer(' Использовать'));
+    document.write(buffer(' Нужно!') + "<br>");
+
+    var buffer2 = makeBuffer();
+    document.write(buffer2(0));
+    document.write(buffer2(1));
+    document.write(buffer2(0));
+
+*/
+
+    //Код, как с learn.javascript.ru
+
+    function makeBuffer() {
+        var text = '';
+
+        return function(piece) {
+            if (arguments.length == 0) { // вызов без аргументов
+                return text;
+            }
+            return text += piece;
+        };
+    };
+
+    var buffer = makeBuffer();
+
+    var buffer = makeBuffer();
+    document.write(buffer('Замыкания') + "<br>");
+    document.write(buffer(' Использовать') + "<br>");
+    document.write(buffer(' Нужно!') + "<br>");
+
+    var buffer2 = makeBuffer();
+    document.write(buffer2(0) + "<br>");
+    document.write(buffer2(1) + "<br>");
+    document.write(buffer2(0) + "<br>");
+
+    </script>
+</body>
+
+</html>

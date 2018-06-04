@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Строковый буфер с очисткой</title>
+</head>
+
+<body>
+    <script>
+    function makeBuffer() {
+        var text = '';
+
+        return function buffer(piece) {
+        	
+
+            if (arguments.length == 0) { // вызов без аргументов
+                return text;
+            }
+
+            buffer.clear = function() {
+        		text = "Ничего вы не ввели(альтернативный текст для видимости '')";
+        	}
+
+            return text += piece;
+
+
+        };
+    };
+
+    var buffer = makeBuffer();
+
+    
+    document.write( buffer("Тест") + "<br>");
+    document.write( buffer(" тебя не съест ") + "<br>");
+
+    buffer.clear();
+
+    document.write(buffer() + "<br>"); // ""
+    </script>
+</body>
+
+</html>
