@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>defineProperty</title>
+</head>
+
+<body>
+    <script>
+
+    function user1() {
+
+        
+            this.firstName = "Вася";
+            this.surname = "Петров";
+        
+
+        Object.defineProperty(this, "fullName", {
+
+            get: function() {
+                return this.firstName + ' ' + this.surname;
+            },
+
+            set: function(value) {
+                var split = value.split(' ');
+                this.firstName = split[0];
+                this.surname = split[1];
+            }
+
+
+        });
+
+    }
+
+    var a = new user1();
+
+    a.fullName = "Андрей Черкасов";
+    document.write(a.firstName + " "); // Петя
+    document.write(a.surname); // Иванов
+
+    </script>
+</body>
+
+</html>

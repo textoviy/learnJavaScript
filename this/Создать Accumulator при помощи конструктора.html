@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Создать Accumulator при помощи конструктора</title>
+</head>
+<body>
+	
+	<script>
+
+
+		
+		function Accumulator(startingValue) {
+			this.value = startingValue;
+
+			this.read = function() {
+				this.value += +prompt('Сколько добавлять будем?', 0);
+			}
+
+			//return this.value;
+		}
+
+		var accumulator = new Accumulator(0);
+
+
+accumulator.read(); // прибавит ввод prompt к текущему значению
+console.log(accumulator.value);
+accumulator.read(); // прибавит ввод prompt к текущему значению
+console.log(accumulator.value);
+accumulator.read(); // прибавит ввод prompt к текущему значению
+alert( accumulator.value ); // выведет текущее значение
+
+	</script>
+</body>
+</html>

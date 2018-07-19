@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сумма произвольного количества скобок</title>
+</head>
+
+<body>
+    <script>
+    	//Функция суммы
+    function sum(a) {
+    	// Текущая сумма
+        var currentSum = a;
+
+        //Замыкание
+        function f(b) {
+            currentSum += b;
+            return f;
+        }
+
+        f.toString = function() {
+            return currentSum;
+        };
+
+        return f;
+    }
+
+    document.write(sum(1)(1)(1)(1)(1)(1)); // 6
+
+    
+    </script>
+</body>
+
+</html>

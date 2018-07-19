@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>calculator с тремя методами.html</title>
+</head>
+
+<body>
+    <script>
+
+
+    var calculator = {
+    	read: function () {
+    		this.a = +prompt("a?","");
+    		this.b = +prompt("a?","");
+    	},
+
+    	sum: function () {
+    		return this.a + this.b;
+    	},
+
+    	mul: function () {
+    		return this.a * this.b;
+    	}
+    }
+
+    calculator.read();
+    alert(calculator.sum());
+    alert(calculator.mul());
+
+
+
+    </script>
+</body>
+
+</html>
